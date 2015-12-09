@@ -1,0 +1,23 @@
+"""
+usage: pyzure-cli hullo [-h|--help] [<name>]
+
+options:
+    -h, --help
+    -v, --version
+
+"""
+
+import sys
+from docopt import docopt
+
+
+def main(argv):
+
+    args = docopt(
+        __doc__,
+        argv=argv,
+        version='pyzure-cli version 0.0.0',
+        options_first=True
+    )
+
+    sys.stdout.write("Hullo {0}!".format(args['<name>'] or "World"))
