@@ -1,168 +1,355 @@
 TOP LEVEL PLANNED PYZURE COMMANDS
-----------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
-Display help for a given command
-help [options] [command]
-
-Log in to an Azure subscription using Active Directory. Currently, the user can login only via Microsoft organizational account
-login [options] [username]
-
-Log out from Azure subscription using Active Directory. Currently, the user can log out only via Microsoft organizational account
-logout [options] [username]
-
-Open the portal in a browser
-portal [options]
-
-Commands:
-account Commands to manage your account information and publish settings
-config Commands to manage your local settings
-hdinsight Commands to manage HDInsight clusters and jobs
-mobile Commands to manage your Mobile Services
-network Commands to manage your Networks
-sb Commands to manage your Service Bus configuration
-service Commands to manage your Cloud Services
-site Commands to manage your Web Sites
-sql Commands to manage your SQL Server accounts
-storage Commands to manage your Storage objects
-vm Commands to manage your Virtual Machines
+account		Commands to manage your account information and publish settings
+config		Commands to manage your local settings
+hdinsight	Commands to manage HDInsight clusters and jobs
+mobile		Commands to manage your Mobile Services
+network		Commands to manage your Networks
+sb		Commands to manage your Service Bus configuration
+service		Commands to manage your Cloud Services
+site		Commands to manage your Web Sites
+sql		Commands to manage your SQL Server accounts
+storage		Commands to manage your Storage objects
+vm		Commands to manage your Virtual Machines
 
 Options:
 -h, --help output usage information
 -v, --version output the application version
 
+V.1.0 target:
+--------------------------------------------------------------------------------
+We will be taking up first top level commands for integration in the following order:
 
-PYZURE STORAGE LEVEL COMMANDS
+# login
+# logout
+# account
+# config
+# storage
+# vm
+# service
+
+
+Completing one of these sections will be regarded as a milestone.
+Following is a list of feature already offered by the azure-xplat-cli tool based on NodeJS.
+Depending on Azure Python SDK limitations, some features may later have to be reprioritized.
+
+PYZURE HELP COMMAND
+--------------------------------------------------------------------------------
+
+Display help for a given command
+  help [options] [command]
+
+PYZURE LOGIN / LOGOUT COMMANDS
+---------------------------------------------------------------------------
+
+Log in to an Azure subscription using Active Directory. Currently, the user can login only via Microsoft organizational account
+  login [options] [username]
+
+Log out from Azure subscription using Active Directory. Currently, the user can log out only via Microsoft organizational account
+  logout [options] [username]
+
+PYZURE ACCOUNT COMMANDS
+---------------------------------------------------------------------------o
+
+List the imported subscriptions
+  account list [options]
+
+Show details about a subscription
+  account show [options] [subscriptionNameOrId]
+
+Set the current subscription
+  account set [options] <subscriptionNameOrId>
+
+Remove a subscription or environment, or clear all of the stored account and environment info
+  account clear [options]
+
+Import a publishsettings file or certificate for your account
+  account import [options] <file>
+
+Launch a browser to download your publishsettings file
+  account download [options]
+
+Commands to manage your account environment
+  account env list [options]
+  account env show [options] [environment]
+  account env add [options] [environment]
+  account env set [options] [environment]
+  account env delete [options] [environment]
+
+Commands to manage your Affinity Groups
+  account affinity-group list [options]
+  account affinity-group create [options] <name>
+  account affinity-group show [options] <name>
+  account affinity-group delete [options] <name>
+
+Commands to manage your account certificates
+  account cert export [options]
+
+PYZURE CONFIG COMMANDS
+----------------------------------------------------------------------------
+List config settings
+  config list [options]
+
+Delete a config setting
+  config delete [options] <name>
+
+Update a config setting
+  config set <name> <value>
+
+Sets the cli working mode, valid names are 'arm' for resource manager and 'asm' for service management
+  config mode [options] <name>
+
+PYZURE STORAGE COMMANDS
 ----------------------------------------------------------------------------
 
-pyzure Commands to manage your Storage objects
+Commands to manage your Storage objects
 
-pyzure Commands to manage your Storage accounts
-pyzure storage account list [options]
-pyzure storage account show [options] <name>
-pyzure storage account create [options] <name>
-pyzure storage account set [options] <name>
-pyzure storage account delete [options] <name>
-pyzure storage account check [options] <name>
+Commands to manage your Storage accounts
+  storage account list [options]
+  storage account show [options] <name>
+  storage account create [options] <name>
+  storage account set [options] <name>
+  storage account delete [options] <name>
+  storage account check [options] <name>
 
-pyzure Commands to manage your Storage account keys
-pyzure storage account keys list [options] <name>
-pyzure storage account keys renew [options] <name>
+Commands to manage your Storage account keys
+  storage account keys list [options] <name>
+  storage account keys renew [options] <name>
 
-pyzure Commands to show your Storage connection string
-pyzure storage account connectionstring show [options] <name>
+Commands to show your Storage connection string
+  storage account connectionstring show [options] <name>
 
-pyzure Commands to manage your Storage containers
-pyzure storage container list [options] [prefix]
-pyzure storage container show [options] [container]
-pyzure storage container create [options] [container]
-pyzure storage container delete [options] [container]
-pyzure storage container set [options] [container]
+Commands to manage your Storage containers
+  storage container list [options] [prefix]
+  storage container show [options] [container]
+  storage container create [options] [container]
+  storage container delete [options] [container]
+  storage container set [options] [container]
 
-pyzure Commands to manage shared access signatures of your Storage container
-pyzure storage container sas create [options] [container] [permissions] [expiry]
+Commands to manage shared access signatures of your Storage container
+  storage container sas create [options] [container] [permissions] [expiry]
 
-pyzure Commands to manage stored access policies of your Storage container
-pyzure storage container policy create [options] [container] [name]
-pyzure storage container policy show [options] [container] [name]
-pyzure storage container policy list [options] [container]
-pyzure storage container policy set [options] [container] [name]
-pyzure storage container policy delete [options] [container] [name]
+Commands to manage stored access policies of your Storage container
+  storage container policy create [options] [container] [name]
+  storage container policy show [options] [container] [name]
+  storage container policy list [options] [container]
+  storage container policy set [options] [container] [name]
+  storage container policy delete [options] [container] [name]
 
-pyzure Commands to manage your Storage blobs
-pyzure storage blob list [options] [container] [prefix]
-pyzure storage blob show [options] [container] [blob]
-pyzure storage blob delete [options] [container] [blob]
-pyzure storage blob upload [options] [file] [container] [blob]
-pyzure storage blob download [options] [container] [blob] [destination]
+Commands to manage your Storage blobs
+  storage blob list [options] [container] [prefix]
+  storage blob show [options] [container] [blob]
+  storage blob delete [options] [container] [blob]
+  storage blob upload [options] [file] [container] [blob]
+  storage blob download [options] [container] [blob] [destination]
 
-pyzure Commands to manage your blob copy operations
-pyzure storage blob copy start [options] [sourceUri] [destContainer]
-pyzure storage blob copy show [options] [container] [blob]
-pyzure storage blob copy stop [options] [container] [blob] [copyid]
+Commands to manage your blob copy operations
+  storage blob copy start [options] [sourceUri] [destContainer]
+  storage blob copy show [options] [container] [blob]
+  storage blob copy stop [options] [container] [blob] [copyid]
 
-pyzure Commands to manage shared access signature of your Storage blob
-pyzure storage blob sas create [options] [container] [blob] [permissions] [expiry]
+Commands to manage shared access signature of your Storage blob
+  storage blob sas create [options] [container] [blob] [permissions] [expiry]
 
-pyzure Commands to manage your Storage file shares
-pyzure storage share create [options] [share]
-pyzure storage share show [options] [share]
-pyzure storage share set [options] [share]
-pyzure storage share delete [options] [share]
-pyzure storage share list [options] [prefix]
+Commands to manage your Storage file shares
+  storage share create [options] [share]
+  storage share show [options] [share]
+  storage share set [options] [share]
+  storage share delete [options] [share]
+  storage share list [options] [prefix]
 
-pyzure Commands to manage shared access signatures of your Storage file shares
-pyzure storage share sas create [options] [share] [permissions] [expiry]
+Commands to manage shared access signatures of your Storage file shares
+  storage share sas create [options] [share] [permissions] [expiry]
 
-pyzure Commands to manage stored access policies of your Storage file share
-pyzure storage share policy create [options] [share] [name]
-pyzure storage share policy show [options] [share] [name]
-pyzure storage share policy list [options] [share]
-pyzure storage share policy set [options] [share] [name]
-pyzure storage share policy delete [options] [share] [name]
+Commands to manage stored access policies of your Storage file share
+  storage share policy create [options] [share] [name]
+  storage share policy show [options] [share] [name]
+  storage share policy list [options] [share]
+  storage share policy set [options] [share] [name]
+  storage share policy delete [options] [share] [name]
 
-pyzure Commands to manage your Storage files
-pyzure storage file list [options] [share] [path]
-pyzure storage file delete [options] [share] [path]
-pyzure storage file upload [options] [source] [share] [path]
-pyzure storage file download [options] [share] [path] [destination]
+Commands to manage your Storage files
+  storage file list [options] [share] [path]
+  storage file delete [options] [share] [path]
+  storage file upload [options] [source] [share] [path]
+  storage file download [options] [share] [path] [destination]
 
-pyzure Commands to manage your file copy operations
-pyzure storage file copy start [options] [sourceUri] [destShare]
-pyzure storage file copy show [options] [share] [path]
-pyzure storage file copy stop [options] [share] [path] [copyid]
+Commands to manage your file copy operations
+  storage file copy start [options] [sourceUri] [destShare]
+  storage file copy show [options] [share] [path]
+  storage file copy stop [options] [share] [path] [copyid]
 
-pyzure Commands to manage shared access signatures of your Storage file
-pyzure storage file sas create [options] [share] [path] [permissions] [expiry]
+Commands to manage shared access signatures of your Storage file
+  storage file sas create [options] [share] [path] [permissions] [expiry]
 
-pyzure Commands to manage your Storage file directory
-pyzure storage directory create [options] [share] [path]
-pyzure storage directory delete [options] [share] [path]
+Commands to manage your Storage file directory
+  storage directory create [options] [share] [path]
+  storage directory delete [options] [share] [path]
 
-pyzure Commands to manage your Storage queues
-pyzure storage queue create [options] [queue]
-pyzure storage queue list [options] [prefix]
-pyzure storage queue show [options] [queue]
-pyzure storage queue delete [options] [queue]
-pyzure
-pyzure Commands to manage shared access signatures of your Storage queue
-pyzure storage queue sas create [options] [queue] [permissions] [expiry]
+Commands to manage your Storage queues
+  storage queue create [options] [queue]
+  storage queue list [options] [prefix]
+  storage queue show [options] [queue]
+  storage queue delete [options] [queue]
 
-pyzure Commands to manage stored access policies of your Storage queue
-pyzure storage queue policy create [options] [queue] [name]
-pyzure storage queue policy show [options] [queue] [name]
-pyzure storage queue policy list [options] [queue]
-pyzure storage queue policy set [options] [queue] [name]
-pyzure storage queue policy delete [options] [queue] [name]
+Commands to manage shared access signatures of your Storage queue
+  storage queue sas create [options] [queue] [permissions] [expiry]
 
-pyzure Commands to manage your Storage logging properties
-pyzure storage logging show [options]
-pyzure storage logging set [options]
+Commands to manage stored access policies of your Storage queue
+  storage queue policy create [options] [queue] [name]
+  storage queue policy show [options] [queue] [name]
+  storage queue policy list [options] [queue]
+  storage queue policy set [options] [queue] [name]
+  storage queue policy delete [options] [queue] [name]
 
-pyzure Commands to manage your Storage metrics properties
-pyzure storage metrics show [options]
-pyzure storage metrics set [options]
+Commands to manage your Storage logging properties
+  storage logging show [options]
+  storage logging set [options]
 
-pyzure Commands to manage your Storage CORS (Cross-Origin Resource Sharing)
-pyzure storage cors set [options]
-pyzure storage cors show [options]
-pyzure storage cors delete [options]
+Commands to manage your Storage metrics properties
+  storage metrics show [options]
+  storage metrics set [options]
 
-pyzure Commands to manage your Storage tables
-pyzure storage table create [options] [table]
-pyzure storage table list [options] [prefix]
-pyzure storage table show [options] [table]
-pyzure storage table delete [options] [table]
+Commands to manage your Storage CORS (Cross-Origin Resource Sharing)
+  storage cors set [options]
+  storage cors show [options]
+  storage cors delete [options]
 
-pyzure Commands to manage shared access signatures of your Storage table
-pyzure storage table sas create [options] [table] [permissions] [expiry]
+Commands to manage your Storage tables
+  storage table create [options] [table]
+  storage table list [options] [prefix]
+  storage table show [options] [table]
+  storage table delete [options] [table]
 
-pyzure Commands to manage stored access policies of your Storage table
-pyzure storage table policy create [options] [table] [name]
-pyzure storage table policy show [options] [table] [name]
-pyzure storage table policy list [options] [table]
-pyzure storage table policy set [options] [table] [name]
-pyzure storage table policy delete [options] [table] [name]
+Commands to manage shared access signatures of your Storage table
+  storage table sas create [options] [table] [permissions] [expiry]
 
-pyzure Options:
-pyzure -h, --help output usage information
+Commands to manage stored access policies of your Storage table
+  storage table policy create [options] [table] [name]
+ Options:
+  storage table policy show [options] [table] [name]
+  storage table policy list [options] [table]
+  storage table policy set [options] [table] [name]
+  storage table policy delete [options] [table] [name]
 
+ -h, --help output usage information
+
+PYZURE VM COMMANDS
+----------------------------------------------------------------------------
+
+Create a VM
+  vm create [options] <dns-name> <image> [userName] [password]
+
+Create a VM from json role file
+  vm create-from [options] <dns-name> <role-file>
+
+List the VM
+  vm list [options]
+
+Show details about the VM
+  vm show [options] <name>
+
+Delete the VM
+  vm delete [options] <name>
+
+Start the VM
+  vm start [options] <name>
+
+Restart the VM
+  vm restart [options] <name>
+
+Shutdown the VM
+  vm shutdown [options] <name>
+
+Capture the VM as OS Image or VM Image
+  vm capture [options] <vm-name> <target-image-name>
+
+Export a VM to a file
+  vm export [options] <vm-name> <file-path>
+
+Commands to manage VM resource extensions
+  vm extension list [options]
+  vm extension set [options] <vm-name> <extension-name> <publisher-name> <version>
+  vm extension set-chef [options] <vm-name>
+  vm extension get [options] <vm-name>
+  vm extension get-chef [options] <vm-name>
+
+Commands to manage your Docker Virtual Machine
+  vm docker create [options] <dns-name> <image> <user-name> [password]
+
+Commands to manage your Virtual Machine locations
+  vm location list [options]
+
+Commands to manage your Virtual Machine static IP address
+  vm static-ip show [options] <vm-name>
+  vm static-ip set [options] <vm-name> <ip-address>
+  vm static-ip remove [options] <vm-name>
+
+Commands to manage your Virtual Machine public IP address
+  vm public-ip list [options] [vm-name]
+  vm public-ip set [options] [vm-name] [publicip-name]
+  vm public-ip delete [options] [vm-name] [publicip-name]
+
+Commands to manage your Virtual Machine endpoints
+  vm endpoint create [options] <vm-name> <public-port> [local-port]
+  vm endpoint create-multiple [options] <vm-name> <endpoints-config>
+  vm endpoint delete [options] <vm-name> <endpoint-name>
+  vm endpoint set [options] <vm-name> <endpoint-name>
+  vm endpoint list [options] <vm-name>
+  vm endpoint show [options] <vm-name> <endpoint-name>
+
+Commands to manage your Virtual Machine endpoint's ACL rules
+  vm endpoint acl-rule create [options] [vm-name] [endpoint-name] [order] [action] [remote-subnet]
+  vm endpoint acl-rule list [options] [vm-name] [endpoint-name]
+  vm endpoint acl-rule delete [options] [vm-name] [endpoint-name] [order]
+  vm endpoint acl-rule set [options] [vm-name] [endpoint-name] [order]
+
+Commands to manage your Virtual Machine images
+  vm image show [options] <name>
+  vm image list [options]
+  vm image delete [options] <name>
+  vm image create [options] <name> [source-path]
+
+Commands to manage your Virtual Machine data disks
+  vm disk show [options] <name>
+  vm disk list [options] [vm-name]
+  vm disk delete [options] <name>
+  vm disk create [options] <name> [source-path]
+  vm disk upload [options] <source-path> <blob-url> <storage-account-key>
+  vm disk attach [options] <vm-name> <disk-image-name>
+  vm disk attach-new [options] <vm-name> <size-in-gb> [blob-url]
+  vm disk detach [options] <vm-name> <lun>
+  vm disk update [options] <vm-name> <lun>
+
+
+PYZURE SERVICE COMMANDS
+----------------------------------------------------------------------------
+
+Create a cloud service
+  service create [options] <serviceName>
+
+List Azure cloud services
+  service list [options]
+
+Show Azure cloud service
+  service show [options] <serviceName>
+
+Delete a cloud service
+  service delete [options] <serviceName>
+
+Commands to manage your Cloud Services certificates
+  service cert list [options]
+  service cert create [options] <dns-name> <file> [password]
+  service cert delete [options] <thumbprint>
+
+Commands to manage internal load balancers for your Cloud Service Deployment
+  service internal-load-balancer list [options] [serviceName]
+  service internal-load-balancer add [options] [serviceName] [internalLBName]
+  service internal-load-balancer delete [options] [serviceName] [internalLBName]
+  service internal-load-balancer set [options] [serviceName] [internalLBName]
+
+Commands to manage load balanced set for a Cloud Service Deployment
+  service load-balanced-set list [options] <serviceName>
+  service load-balanced-set show [options] <serviceName>
+  service load-balanced-set set [options] <serviceName> <load-balanced-set-name>
