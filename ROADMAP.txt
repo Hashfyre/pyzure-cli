@@ -1,0 +1,168 @@
+TOP LEVEL PLANNED PYZURE COMMANDS
+----------------------------------------------------------------------------
+
+Display help for a given command
+help [options] [command]
+
+Log in to an Azure subscription using Active Directory. Currently, the user can login only via Microsoft organizational account
+login [options] [username]
+
+Log out from Azure subscription using Active Directory. Currently, the user can log out only via Microsoft organizational account
+logout [options] [username]
+
+Open the portal in a browser
+portal [options]
+
+Commands:
+account Commands to manage your account information and publish settings
+config Commands to manage your local settings
+hdinsight Commands to manage HDInsight clusters and jobs
+mobile Commands to manage your Mobile Services
+network Commands to manage your Networks
+sb Commands to manage your Service Bus configuration
+service Commands to manage your Cloud Services
+site Commands to manage your Web Sites
+sql Commands to manage your SQL Server accounts
+storage Commands to manage your Storage objects
+vm Commands to manage your Virtual Machines
+
+Options:
+-h, --help output usage information
+-v, --version output the application version
+
+
+PYZURE STORAGE LEVEL COMMANDS
+----------------------------------------------------------------------------
+
+pyzure Commands to manage your Storage objects
+
+pyzure Commands to manage your Storage accounts
+pyzure storage account list [options]
+pyzure storage account show [options] <name>
+pyzure storage account create [options] <name>
+pyzure storage account set [options] <name>
+pyzure storage account delete [options] <name>
+pyzure storage account check [options] <name>
+
+pyzure Commands to manage your Storage account keys
+pyzure storage account keys list [options] <name>
+pyzure storage account keys renew [options] <name>
+
+pyzure Commands to show your Storage connection string
+pyzure storage account connectionstring show [options] <name>
+
+pyzure Commands to manage your Storage containers
+pyzure storage container list [options] [prefix]
+pyzure storage container show [options] [container]
+pyzure storage container create [options] [container]
+pyzure storage container delete [options] [container]
+pyzure storage container set [options] [container]
+
+pyzure Commands to manage shared access signatures of your Storage container
+pyzure storage container sas create [options] [container] [permissions] [expiry]
+
+pyzure Commands to manage stored access policies of your Storage container
+pyzure storage container policy create [options] [container] [name]
+pyzure storage container policy show [options] [container] [name]
+pyzure storage container policy list [options] [container]
+pyzure storage container policy set [options] [container] [name]
+pyzure storage container policy delete [options] [container] [name]
+
+pyzure Commands to manage your Storage blobs
+pyzure storage blob list [options] [container] [prefix]
+pyzure storage blob show [options] [container] [blob]
+pyzure storage blob delete [options] [container] [blob]
+pyzure storage blob upload [options] [file] [container] [blob]
+pyzure storage blob download [options] [container] [blob] [destination]
+
+pyzure Commands to manage your blob copy operations
+pyzure storage blob copy start [options] [sourceUri] [destContainer]
+pyzure storage blob copy show [options] [container] [blob]
+pyzure storage blob copy stop [options] [container] [blob] [copyid]
+
+pyzure Commands to manage shared access signature of your Storage blob
+pyzure storage blob sas create [options] [container] [blob] [permissions] [expiry]
+
+pyzure Commands to manage your Storage file shares
+pyzure storage share create [options] [share]
+pyzure storage share show [options] [share]
+pyzure storage share set [options] [share]
+pyzure storage share delete [options] [share]
+pyzure storage share list [options] [prefix]
+
+pyzure Commands to manage shared access signatures of your Storage file shares
+pyzure storage share sas create [options] [share] [permissions] [expiry]
+
+pyzure Commands to manage stored access policies of your Storage file share
+pyzure storage share policy create [options] [share] [name]
+pyzure storage share policy show [options] [share] [name]
+pyzure storage share policy list [options] [share]
+pyzure storage share policy set [options] [share] [name]
+pyzure storage share policy delete [options] [share] [name]
+
+pyzure Commands to manage your Storage files
+pyzure storage file list [options] [share] [path]
+pyzure storage file delete [options] [share] [path]
+pyzure storage file upload [options] [source] [share] [path]
+pyzure storage file download [options] [share] [path] [destination]
+
+pyzure Commands to manage your file copy operations
+pyzure storage file copy start [options] [sourceUri] [destShare]
+pyzure storage file copy show [options] [share] [path]
+pyzure storage file copy stop [options] [share] [path] [copyid]
+
+pyzure Commands to manage shared access signatures of your Storage file
+pyzure storage file sas create [options] [share] [path] [permissions] [expiry]
+
+pyzure Commands to manage your Storage file directory
+pyzure storage directory create [options] [share] [path]
+pyzure storage directory delete [options] [share] [path]
+
+pyzure Commands to manage your Storage queues
+pyzure storage queue create [options] [queue]
+pyzure storage queue list [options] [prefix]
+pyzure storage queue show [options] [queue]
+pyzure storage queue delete [options] [queue]
+pyzure
+pyzure Commands to manage shared access signatures of your Storage queue
+pyzure storage queue sas create [options] [queue] [permissions] [expiry]
+
+pyzure Commands to manage stored access policies of your Storage queue
+pyzure storage queue policy create [options] [queue] [name]
+pyzure storage queue policy show [options] [queue] [name]
+pyzure storage queue policy list [options] [queue]
+pyzure storage queue policy set [options] [queue] [name]
+pyzure storage queue policy delete [options] [queue] [name]
+
+pyzure Commands to manage your Storage logging properties
+pyzure storage logging show [options]
+pyzure storage logging set [options]
+
+pyzure Commands to manage your Storage metrics properties
+pyzure storage metrics show [options]
+pyzure storage metrics set [options]
+
+pyzure Commands to manage your Storage CORS (Cross-Origin Resource Sharing)
+pyzure storage cors set [options]
+pyzure storage cors show [options]
+pyzure storage cors delete [options]
+
+pyzure Commands to manage your Storage tables
+pyzure storage table create [options] [table]
+pyzure storage table list [options] [prefix]
+pyzure storage table show [options] [table]
+pyzure storage table delete [options] [table]
+
+pyzure Commands to manage shared access signatures of your Storage table
+pyzure storage table sas create [options] [table] [permissions] [expiry]
+
+pyzure Commands to manage stored access policies of your Storage table
+pyzure storage table policy create [options] [table] [name]
+pyzure storage table policy show [options] [table] [name]
+pyzure storage table policy list [options] [table]
+pyzure storage table policy set [options] [table] [name]
+pyzure storage table policy delete [options] [table] [name]
+
+pyzure Options:
+pyzure -h, --help output usage information
+
