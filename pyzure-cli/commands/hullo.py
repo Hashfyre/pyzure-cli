@@ -3,7 +3,6 @@ usage: pyzure-cli hullo [-h|--help] [<name>]
 
 options:
     -h, --help
-    -v, --version
 
 """
 
