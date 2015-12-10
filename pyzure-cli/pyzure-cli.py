@@ -14,6 +14,7 @@ from docopt import docopt
 
 sys.path.append('./commands')
 commands = {command: import_module(command).main for command in [
+    'help',
     'hullo'
 ]}
 
