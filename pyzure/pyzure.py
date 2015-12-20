@@ -5,7 +5,8 @@ usage: pyzure [-h|--help] [-v|--version] [<command> [<args>...]]
 options:
     -h, --help
     -v, --version
-Commands:
+    
+commands:
     login       Command to login into your Windows Azure account
     logout      Command to logout of your Windows Azure account
     account     Commands to manage your account information and publish settings
@@ -25,21 +26,23 @@ Commands:
 
 
 import sys
+import os
 from importlib import import_module
 from docopt import docopt
 
-sys.path.append('./commands')
+sys.path.append(os.path.join(os.path.dirname(__file__), "commands"))
+
 commands = {command: import_module(command).main for command in [
     'help',
     'hullo',
-    'login',
-    'logout',
-    'account',
-    'config',
-    'network',
-    'service',
-    'storage',
-    'vm'
+    # 'login',
+    # 'logout',
+    # 'account',
+    # 'config',
+    # 'network',
+    # 'service',
+    # 'storage',
+    # 'vm'
 ]}
 
 
