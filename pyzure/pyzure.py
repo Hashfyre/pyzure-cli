@@ -5,7 +5,8 @@ usage: pyzure [-h|--help] [-v|--version] [<command> [<args>...]]
 options:
     -h, --help
     -v, --version
-Commands:
+    
+commands:
     login       Command to login into your Windows Azure account
     logout      Command to logout of your Windows Azure account
     account     Commands to manage your account information and publish settings
