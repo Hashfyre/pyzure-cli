@@ -22,7 +22,7 @@ setup(
     install_requires=[],
     entry_points={
         'console_scripts': [
-            'pyzure-cli=pyzure-cli:main',
+            'pyzure=pyzure:main',
         ],
     }
 )
