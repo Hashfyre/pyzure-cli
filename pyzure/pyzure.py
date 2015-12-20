@@ -34,14 +34,14 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "commands"))
 commands = {command: import_module(command).main for command in [
     'help',
     'hullo',
-    'login',
-    'logout',
-    'account',
-    'config',
-    'network',
-    'service',
-    'storage',
-    'vm'
+    # 'login',
+    # 'logout',
+    # 'account',
+    # 'config',
+    # 'network',
+    # 'service',
+    # 'storage',
+    # 'vm'
 ]}
 
 
