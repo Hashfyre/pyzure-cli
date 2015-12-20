@@ -1,5 +1,5 @@
 """
-usage: pyzure-cli help [-h|--help] [<command>...]
+usage: pyzure help [-h|--help] [<command>...]
 
 options:
     -h, --help
@@ -21,7 +21,7 @@ def main(argv):
     if not args['<command>']:
         main(['--help'])
     else:
-        pyzureCli = import_module('pyzure-cli').main
+        pyzureCli = import_module('pyzure').main
         pyzureCli(
             args['<command>'] +
             ['--help']

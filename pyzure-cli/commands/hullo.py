@@ -1,5 +1,5 @@
 """
-usage: pyzure-cli hullo [-h|--help] [<name>]
+usage: pyzure hullo [-h|--help] [<name>]
 
 options:
     -h, --help
