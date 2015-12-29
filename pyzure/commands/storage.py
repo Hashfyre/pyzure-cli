@@ -140,6 +140,7 @@ from docopt import docopt
 
 # sys.path.append('/storage')
 sys.path.append(os.path.join(os.path.dirname(__file__), "storage"))
+
 commands = {command: import_module(command).main for command in [
     # 'account',
     # 'blob',

@@ -1,2 +1,14 @@
-azure==1.0.2
 docopt==0.6.1
+azure==1.0.2
+azure-common==1.0.0
+azure-mgmt==0.20.1
+azure-mgmt-common==0.20.0
+azure-mgmt-compute==0.20.0
+azure-mgmt-network==0.20.1
+azure-mgmt-nspkg==1.0.0
+azure-mgmt-resource==0.20.1
+azure-mgmt-storage==0.20.0
+azure-nspkg==1.0.0
+azure-servicebus==0.20.1
+azure-servicemanagement-legacy==0.20.1
+azure-storage==0.20.2
