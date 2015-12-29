@@ -5,7 +5,7 @@ usage: pyzure [-h|--help] [-v|--version] [<command> [<args>...]]
 options:
     -h, --help
     -v, --version
-    
+
 commands:
     login       Command to login into your Windows Azure account
     logout      Command to logout of your Windows Azure account
@@ -41,12 +41,36 @@ commands = {command: import_module(command).main for command in [
     # 'config',
     # 'network',
     # 'service',
-    # 'storage',
+    'storage',
     # 'vm'
 ]}
 
 
 def main(argv):
+
+# Error Message
+    # Traceback (most recent call last):
+    #   File "pyzure.py", line 67, in <module>
+    #     main(sys.argv[1:])
+    #   File "pyzure.py", line 54, in main
+    #     version='pyzure-cli version 0.0.0',
+    #   File "/usr/lib/python2.7/site-packages/docopt.py", line 560, in docopt
+    #     pattern = parse_pattern(formal_usage(DocoptExit.usage), options)
+    #   File "/usr/lib/python2.7/site-packages/docopt.py", line 373, in parse_pattern
+    #     result = parse_expr(tokens, options)
+    #   File "/usr/lib/python2.7/site-packages/docopt.py", line 381, in parse_expr
+    #     seq = parse_seq(tokens, options)
+    #   File "/usr/lib/python2.7/site-packages/docopt.py", line 396, in parse_seq
+    #     atom = parse_atom(tokens, options)
+    #   File "/usr/lib/python2.7/site-packages/docopt.py", line 413, in parse_atom
+    #     result = pattern(*parse_expr(tokens, options))
+    #   File "/usr/lib/python2.7/site-packages/docopt.py", line 381, in parse_expr
+    #     seq = parse_seq(tokens, options)
+    #   File "/usr/lib/python2.7/site-packages/docopt.py", line 396, in parse_seq
+    #     atom = parse_atom(tokens, options)
+    #   File "/usr/lib/python2.7/site-packages/docopt.py", line 415, in parse_atom
+    #     raise tokens.error("unmatched '%s'" % token)
+    # docopt.DocoptLanguageError: unmatched '['
 
     args = docopt(
         __doc__,
