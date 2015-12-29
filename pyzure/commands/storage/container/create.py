@@ -1,5 +1,5 @@
 """
-    Usage: storage container create [options] [container]
+    Usage: storage container create [-h|--help] [options]
 
     Options:
     -h, --help                                  output usage information
@@ -18,21 +18,6 @@ import os
 from importlib import import_module
 from docopt import docopt
 
-# sys.path.append('./storage')
-# commands = {command: import_module(command).main for command in [
-#     # 'account',
-#     # 'blob',
-#     'container',
-#     # 'cors',
-#     # 'directory',
-#     # 'file',
-#     # 'logging',
-#     # 'metrics',
-#     # 'queue',
-#     # 'share',
-#     # 'table
-# ]}
-
 
 def main(argv):
 
@@ -40,16 +25,15 @@ def main(argv):
         __doc__,
         argv=argv,
         version='pyzure-cli version 0.0.0'
+        # options_first=True
     )
 
-    sys.stdout.write("".format(args))
-    # command = args['<command>']
-    # argv = [command] + args['<args>']
-    # if command in commands:
-    #     commands[command](argv)
-    # else:
-    #     main(['--help'])
+    if '<args>' in args.keys():
+        argv = args['<args>']
+    else:
+        main(['--help'])
 
 
 if __name__ == '__main__':
+    print(docopt(__doc__))
     main(sys.argv[1:])
