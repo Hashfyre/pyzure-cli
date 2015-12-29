@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 """
-    Usage: storage container create [-h|--help] [options]
+    Usage: pyzure storage container create [-h|--help] [options]
 
     Options:
     -h, --help                                  output usage information
