@@ -46,9 +46,7 @@ def main(argv):
 
     command = args['<command>']
     
-    if '<args>' in args.keys():
-        argv = [command] + args['<args>']
-    else:
+    if '<args>' not in args.keys():
         main(['--help'])
 
     if command in commands:
