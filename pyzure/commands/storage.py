@@ -134,22 +134,24 @@ Commands to manage stored access policies of your Storage table
 """
 
 import sys
+import os
 from importlib import import_module
 from docopt import docopt
 
-sys.path.append('./storage')
+# sys.path.append('/storage')
+sys.path.append(os.path.join(os.path.dirname(__file__), "storage"))
 commands = {command: import_module(command).main for command in [
-    'account',
-    'blob',
+    # 'account',
+    # 'blob',
     'container',
-    'cors',
-    'directory',
-    'file',
-    'logging',
-    'metrics',
-    'queue',
-    'share',
-    'table
+    # 'cors',
+    # 'directory',
+    # 'file',
+    # 'logging',
+    # 'metrics',
+    # 'queue',
+    # 'share',
+    # 'table
 ]}
 
 
@@ -159,6 +161,7 @@ def main(argv):
         __doc__,
         argv=argv,
         version='pyzure-cli version 0.0.0'
+        # options_first=True
     )
 
     command = args['<command>']
