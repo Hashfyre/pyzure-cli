@@ -25,7 +25,7 @@ def main(argv):
     args = docopt(
         __doc__,
         argv=argv,
-        version='pyzure-cli version 0.0.0'
+        version='pyzure-cli version 0.0.0',
         options_first=True
     )
 
