@@ -25,8 +25,7 @@ def main(argv):
     args = docopt(
         __doc__,
         argv=argv,
-        version='pyzure-cli version 0.0.0',
-        options_first=True
+        version='pyzure-cli version 0.0.0'
     )
 
     if '<args>' in args.keys():
