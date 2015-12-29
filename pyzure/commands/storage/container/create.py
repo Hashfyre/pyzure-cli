@@ -1,3 +1,4 @@
+#! /usr/bin/env python
 """
     Usage: storage container create [-h|--help] [options]
 

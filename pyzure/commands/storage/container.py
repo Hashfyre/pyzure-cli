@@ -1,3 +1,4 @@
+#! /usr/bin/env python
 """
 usage: pyzure storage container [-h|--help] [<command> [<args>...]]
 
