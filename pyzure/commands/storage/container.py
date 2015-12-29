@@ -23,18 +23,20 @@ Commands to manage stored access policies of your Storage container
 """
 
 import sys
+import os
 from importlib import import_module
 from docopt import docopt
 
-sys.path.append('./container')
+# sys.path.append('./container')
+sys.path.append(os.path.join(os.path.dirname(__file__), "container"))
 commands = {command: import_module(command).main for command in [
-    'list',
-    'show',
+    # 'list',
+    # 'show',
     'create',
-    'delete',
-    'set',
-    'sas',
-    'policy'
+    # 'delete',
+    # 'set',
+    # 'sas',
+    # 'policy'
 ]}
 
 
@@ -44,6 +46,7 @@ def main(argv):
         __doc__,
         argv=argv,
         version='pyzure-cli version 0.0.0'
+        # options_first=True
     )
 
     command = args['<command>']
