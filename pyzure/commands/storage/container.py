@@ -41,7 +41,7 @@ def main(argv):
         __doc__,
         argv=argv,
         version='pyzure-cli version 0.0.0',
-        # options_first=True
+        options_first=True
     )
 
     command = args['<command>']
